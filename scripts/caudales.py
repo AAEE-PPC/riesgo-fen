@@ -10,7 +10,7 @@ Para cada estación del corredor:
 Sin dependencias externas. Tolerante a fallos: una estación que falla se omite.
 Uso: python scripts/caudales.py
 """
-import json, re, sys, time, datetime, urllib.request, urllib.parse, urllib.error, uuid
+import json, re, sys, time, signal, datetime, urllib.request, urllib.parse, urllib.error, uuid
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -22,13 +22,29 @@ HEAD = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) dashboard-Riesg
         "Referer": "https://www.senamhi.gob.pe/mapas/mapa-monitoreohidro/mapa-monitoreo.php"}
 EST = json.loads((ROOT / "scripts" / "estaciones_senamhi.json").read_text(encoding="utf-8"))
 ALERTA_COD = {0: "", 1: "amarillo", 2: "naranja", 3: "rojo"}   # campo 'nivel' de estaciones_monitoreo (supuesto)
+FALLOS_MAX = 3          # si las 3 primeras estaciones no responden, se deja de consultar el hidrograma
+LIMITE_SEG = 8 * 60     # tiempo máximo total del script
 
 
-def http(url, data=None, headers=None, timeout=60):
+class Tope(Exception):
+    pass
+
+
+def _alarma(signum, frame):
+    raise Tope("sin respuesta completa en el tiempo máximo")
+
+
+def http(url, data=None, headers=None, timeout=20, tope=30):
+    """Petición con dos límites: `timeout` por operación de red y `tope` segundos en total (aunque el servidor responda a cuentagotas)."""
     h = dict(HEAD, **(headers or {}))
     req = urllib.request.Request(url, data=data, headers=h, method="POST" if data else "GET")
-    with urllib.request.urlopen(req, timeout=timeout) as r:
-        return r.read().decode("utf-8", "replace")
+    signal.signal(signal.SIGALRM, _alarma)
+    signal.alarm(tope)
+    try:
+        with urllib.request.urlopen(req, timeout=timeout) as r:
+            return r.read().decode("utf-8", "replace")
+    finally:
+        signal.alarm(0)
 
 
 def wfs_estado():
@@ -76,15 +92,16 @@ def hidrograma(e, props, tipo="H"):
     try:
         d = extraer_data(http(GRAF + "?" + urllib.parse.urlencode(q)))
         if d: return d
+        print("   GET sin datos")
     except Exception as ex:
-        print("   GET falló:", ex)
+        print("   GET falló:", type(ex).__name__, ex)
     # 2) POST, igual que el formulario de la página (botones Horario/Diario)
     body, h = multipart({"fecha_hora": fecha_lima(ficha.get("fecha_hora")), "btnTipo": tipo,
                          "variable_opcion": var, "id": ficha["id"]})
     try:
         return extraer_data(http(GRAF, data=body, headers=h))
     except Exception as ex:
-        print("   POST falló:", ex)
+        print("   POST falló:", type(ex).__name__, ex)
     return None
 
 
@@ -94,15 +111,24 @@ def ultimo(serie):
 
 
 def main():
+    print("Consultando GeoServer SENAMHI (estado de estaciones)…", flush=True)
     try:
         estado = wfs_estado()
+        print(f"   {len(estado)} estaciones activas", flush=True)
     except Exception as ex:
-        print("WFS no disponible:", ex); estado = {}
+        print("   WFS no disponible:", type(ex).__name__, ex, flush=True); estado = {}
     salida = []
+    t0 = time.time(); fallos = 0; consultar = True
     for e in EST:
         props = estado.get(e["cod"], {})
-        print("·", e["est"])
-        h = hidrograma(e, props, "H")
+        print("·", e["est"], flush=True)
+        if consultar and time.time() - t0 > LIMITE_SEG:
+            print("   límite de tiempo alcanzado: se omite el hidrograma del resto"); consultar = False
+        h = hidrograma(e, props, "H") if consultar else None
+        if consultar and not h:
+            fallos += 1
+            if fallos >= FALLOS_MAX and not any(s.get("caudal_m3s") is not None or s.get("nivel_m") is not None for s in salida):
+                print(f"   {fallos} estaciones seguidas sin respuesta: se deja de consultar el hidrograma"); consultar = False
         reg = dict(rio=e["rio"], est=e["est"].title(), cod=e["cod"],
                    hora=props.get("fecha_hora") or e["ficha"].get("fecha_hora"),
                    nivel_m=None, caudal_m3s=None, anomalia_pct=None, condicion="",
@@ -135,11 +161,11 @@ def main():
                                         else "Significativamente por debajo de lo normal" if a <= -50 else "Ligeramente por debajo de lo normal" if a <= -15 else "Normal")
             except Exception as ex:
                 print("   diario:", ex)
-            print("   ok:", reg["caudal_m3s"] or reg["nivel_m"], reg.get("unidad", ""), "alerta:", reg["alerta"] or "-", "anomalía:", reg["anomalia_pct"])
+            print("   ok:", reg["caudal_m3s"] or reg["nivel_m"], reg.get("unidad", ""), "alerta:", reg["alerta"] or "-", "anomalía:", reg["anomalia_pct"], flush=True)
         else:
             print("   sin serie (solo estado WFS)")
         salida.append(reg)
-        time.sleep(1)   # cortesía con el servidor
+        if consultar: time.sleep(1)   # cortesía con el servidor
     out = dict(fecha=datetime.datetime.now(LIMA).strftime("%Y-%m-%d"),
                generado=datetime.datetime.now(LIMA).isoformat(timespec="minutes"),
                fuente="SENAMHI (monitoreo hidrológico, plataforma Phisis) · datos en tiempo casi real, sin control de calidad",
