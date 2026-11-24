@@ -1,6 +1,6 @@
 {
-    "fecha":  "2026-11-23",
-    "generado":  "2026-11-23T10:13-05:00",
+    "fecha":  "2026-11-24",
+    "generado":  "2026-11-24T11:11-05:00",
     "fuente":  "SENAMHI (monitoreo hidrológico, plataforma Phisis) · datos en tiempo casi real, sin control de calidad",
     "estaciones":  [
                        {
@@ -41,10 +41,10 @@
                            "rio":  "Rímac (San Mateo)",
                            "est":  "San Mateo",
                            "cod":  "212605",
-                           "hora":  "2026-11-23T05:00-05:00",
+                           "hora":  "2026-11-24T05:00-05:00",
                            "nivel_m":  null,
-                           "caudal_m3s":  8.071,
-                           "anomalia_pct":  -23.2,
+                           "caudal_m3s":  8.68,
+                           "anomalia_pct":  -18.8,
                            "condicion":  "Ligeramente por debajo de lo normal",
                            "alerta":  "verde",
                            "umbrales":  {
@@ -52,7 +52,7 @@
                                             "naranja":  34,
                                             "rojo":  41
                                         },
-                           "pct_umbral_amarillo":  32.3,
+                           "pct_umbral_amarillo":  34.7,
                            "unidad":  "m3/s",
                            "url":  "https://www.senamhi.gob.pe/?p=monitoreo-hidrologico"
                        },
@@ -60,10 +60,10 @@
                            "rio":  "Lurín",
                            "est":  "Antapucro",
                            "cod":  "212700",
-                           "hora":  "2026-11-23T04:00-05:00",
+                           "hora":  "2026-11-24T05:00-05:00",
                            "nivel_m":  null,
-                           "caudal_m3s":  3.18,
-                           "anomalia_pct":  195.4,
+                           "caudal_m3s":  2.36,
+                           "anomalia_pct":  183.2,
                            "condicion":  "Significativamente sobre lo normal",
                            "alerta":  "verde",
                            "umbrales":  {
@@ -71,7 +71,7 @@
                                             "naranja":  55,
                                             "rojo":  70
                                         },
-                           "pct_umbral_amarillo":  9.1,
+                           "pct_umbral_amarillo":  6.7,
                            "unidad":  "m3/s",
                            "url":  "https://www.senamhi.gob.pe/?p=monitoreo-hidrologico"
                        },
@@ -79,9 +79,9 @@
                            "rio":  "Mantaro (Pallanga)",
                            "est":  "Pallanga",
                            "cod":  "230801",
-                           "hora":  "2026-11-20T01:00-05:00",
+                           "hora":  "2026-11-24T01:00-05:00",
                            "nivel_m":  null,
-                           "caudal_m3s":  0.378,
+                           "caudal_m3s":  0.329,
                            "anomalia_pct":  null,
                            "condicion":  "",
                            "alerta":  "",
@@ -98,18 +98,18 @@
                            "rio":  "Cañete",
                            "est":  "Socsi",
                            "cod":  "472191AC",
-                           "hora":  "2026-11-23T04:00-05:00",
+                           "hora":  "2026-11-24T05:00-05:00",
                            "nivel_m":  null,
-                           "caudal_m3s":  20.355,
-                           "anomalia_pct":  -16.5,
-                           "condicion":  "Ligeramente por debajo de lo normal",
+                           "caudal_m3s":  30.857,
+                           "anomalia_pct":  7.9,
+                           "condicion":  "Normal",
                            "alerta":  "verde",
                            "umbrales":  {
                                             "amarillo":  120,
                                             "naranja":  175,
                                             "rojo":  250
                                         },
-                           "pct_umbral_amarillo":  17,
+                           "pct_umbral_amarillo":  25.7,
                            "unidad":  "m3/s",
                            "url":  "https://www.senamhi.gob.pe/?p=monitoreo-hidrologico"
                        },
@@ -117,18 +117,18 @@
                            "rio":  "Rímac",
                            "est":  "Chosica",
                            "cod":  "47278214",
-                           "hora":  "2026-11-23T05:00-05:00",
+                           "hora":  "2026-11-24T06:00-05:00",
                            "nivel_m":  null,
-                           "caudal_m3s":  21.328,
-                           "anomalia_pct":  1.8,
-                           "condicion":  "Normal",
+                           "caudal_m3s":  26.115,
+                           "anomalia_pct":  23.1,
+                           "condicion":  "Ligeramente sobre lo normal",
                            "alerta":  "verde",
                            "umbrales":  {
                                             "amarillo":  75,
                                             "naranja":  90,
                                             "rojo":  120
                                         },
-                           "pct_umbral_amarillo":  28.4,
+                           "pct_umbral_amarillo":  34.8,
                            "unidad":  "m3/s",
                            "url":  "https://www.senamhi.gob.pe/?p=monitoreo-hidrologico"
                        },
@@ -136,10 +136,10 @@
                            "rio":  "Chillón (Obrajillo)",
                            "est":  "Obrajillo",
                            "cod":  "47E9F488",
-                           "hora":  "2026-11-23T05:00-05:00",
+                           "hora":  "2026-11-24T05:00-05:00",
                            "nivel_m":  null,
                            "caudal_m3s":  1.895,
-                           "anomalia_pct":  -32,
+                           "anomalia_pct":  -47.5,
                            "condicion":  "Ligeramente por debajo de lo normal",
                            "alerta":  "verde",
                            "umbrales":  {
@@ -155,10 +155,10 @@
                            "rio":  "San Juan (Chincha)",
                            "est":  "Conta",
                            "cod":  "203501",
-                           "hora":  "2026-11-23T01:00-05:00",
+                           "hora":  "2026-11-24T01:00-05:00",
                            "nivel_m":  null,
-                           "caudal_m3s":  13.775,
-                           "anomalia_pct":  693.9,
+                           "caudal_m3s":  14.93,
+                           "anomalia_pct":  781.9,
                            "condicion":  "Significativamente sobre lo normal",
                            "alerta":  "verde",
                            "umbrales":  {
@@ -166,7 +166,7 @@
                                             "naranja":  140,
                                             "rojo":  250
                                         },
-                           "pct_umbral_amarillo":  19.7,
+                           "pct_umbral_amarillo":  21.3,
                            "unidad":  "m3/s",
                            "url":  "https://www.senamhi.gob.pe/?p=monitoreo-hidrologico"
                        },
@@ -174,10 +174,10 @@
                            "rio":  "Pisco",
                            "est":  "Letrayoc",
                            "cod":  "213403",
-                           "hora":  "2026-11-23T04:00-05:00",
+                           "hora":  "2026-11-24T05:00-05:00",
                            "nivel_m":  null,
-                           "caudal_m3s":  6.744,
-                           "anomalia_pct":  -72.2,
+                           "caudal_m3s":  8.095,
+                           "anomalia_pct":  -70,
                            "condicion":  "Significativamente por debajo de lo normal",
                            "alerta":  "verde",
                            "umbrales":  {
@@ -185,7 +185,7 @@
                                             "naranja":  140,
                                             "rojo":  250
                                         },
-                           "pct_umbral_amarillo":  7.5,
+                           "pct_umbral_amarillo":  9,
                            "unidad":  "m3/s",
                            "url":  "https://www.senamhi.gob.pe/?p=monitoreo-hidrologico"
                        },
@@ -223,10 +223,10 @@
                            "rio":  "Ica (El Tambo Huamaní)",
                            "est":  "El Tambo Huamani",
                            "cod":  "213504",
-                           "hora":  "2026-11-23T01:00-05:00",
+                           "hora":  "2026-11-24T05:00-05:00",
                            "nivel_m":  null,
-                           "caudal_m3s":  13.221,
-                           "anomalia_pct":  -43.2,
+                           "caudal_m3s":  16.151,
+                           "anomalia_pct":  -32.5,
                            "condicion":  "Ligeramente por debajo de lo normal",
                            "alerta":  "verde",
                            "umbrales":  {
@@ -234,7 +234,7 @@
                                             "naranja":  150,
                                             "rojo":  280
                                         },
-                           "pct_umbral_amarillo":  14.7,
+                           "pct_umbral_amarillo":  17.9,
                            "unidad":  "m3/s",
                            "url":  "https://www.senamhi.gob.pe/?p=monitoreo-hidrologico"
                        },
@@ -242,10 +242,10 @@
                            "rio":  "Grande (Llauta)",
                            "est":  "Llauta",
                            "cod":  "213600",
-                           "hora":  "2026-11-23T05:00-05:00",
+                           "hora":  "2026-11-24T05:00-05:00",
                            "nivel_m":  null,
-                           "caudal_m3s":  0.136,
-                           "anomalia_pct":  -58.2,
+                           "caudal_m3s":  0.132,
+                           "anomalia_pct":  -58.1,
                            "condicion":  "Significativamente por debajo de lo normal",
                            "alerta":  "verde",
                            "umbrales":  {
@@ -261,10 +261,10 @@
                            "rio":  "Grande / Nasca (Huallpoca)",
                            "est":  "Huallpoca",
                            "cod":  "230712",
-                           "hora":  "2026-11-23T01:00-05:00",
+                           "hora":  "2026-11-24T05:00-05:00",
                            "nivel_m":  null,
-                           "caudal_m3s":  0.534,
-                           "anomalia_pct":  -92.2,
+                           "caudal_m3s":  0.523,
+                           "anomalia_pct":  -92.1,
                            "condicion":  "Significativamente por debajo de lo normal",
                            "alerta":  "verde",
                            "umbrales":  {
@@ -272,7 +272,7 @@
                                             "naranja":  50,
                                             "rojo":  70
                                         },
-                           "pct_umbral_amarillo":  1.8,
+                           "pct_umbral_amarillo":  1.7,
                            "unidad":  "m3/s",
                            "url":  "https://www.senamhi.gob.pe/?p=monitoreo-hidrologico"
                        },
@@ -280,8 +280,8 @@
                            "rio":  "Ucayali",
                            "est":  "Lpo Pucallpa",
                            "cod":  "240504",
-                           "hora":  "2026-11-21T04:00-05:00",
-                           "nivel_m":  143.269,
+                           "hora":  "2026-11-24T05:00-05:00",
+                           "nivel_m":  142.865,
                            "caudal_m3s":  null,
                            "anomalia_pct":  null,
                            "condicion":  "",
@@ -291,7 +291,7 @@
                                             "naranja":  147.368,
                                             "rojo":  147.868
                                         },
-                           "pct_umbral_amarillo":  97.5,
+                           "pct_umbral_amarillo":  97.2,
                            "unidad":  "m.s.n.m",
                            "url":  "https://www.senamhi.gob.pe/?p=monitoreo-hidrologico"
                        },
@@ -299,10 +299,10 @@
                            "rio":  "Ucayali (Lagarto · Atalaya)",
                            "est":  "Lagarto Ird",
                            "cod":  "251105",
-                           "hora":  "2026-11-21T03:00-05:00",
-                           "nivel_m":  200.97,
+                           "hora":  "2026-11-23T03:00-05:00",
+                           "nivel_m":  201.42,
                            "caudal_m3s":  null,
-                           "anomalia_pct":  -0.6,
+                           "anomalia_pct":  -0.5,
                            "condicion":  "Normal",
                            "alerta":  "rojo",
                            "umbrales":  {
@@ -310,7 +310,7 @@
                                             "naranja":  200.32,
                                             "rojo":  199.72
                                         },
-                           "pct_umbral_amarillo":  100.1,
+                           "pct_umbral_amarillo":  100.3,
                            "unidad":  "m.s.n.m",
                            "url":  "https://www.senamhi.gob.pe/?p=monitoreo-hidrologico"
                        },
@@ -318,10 +318,10 @@
                            "rio":  "Paucartambo",
                            "est":  "Paucartambo",
                            "cod":  "250405",
-                           "hora":  "2026-11-23T01:00-05:00",
+                           "hora":  "2026-11-24T01:00-05:00",
                            "nivel_m":  null,
-                           "caudal_m3s":  14.3,
-                           "anomalia_pct":  -40.6,
+                           "caudal_m3s":  14.8,
+                           "anomalia_pct":  -34.7,
                            "condicion":  "Ligeramente por debajo de lo normal",
                            "alerta":  "verde",
                            "umbrales":  {
@@ -329,7 +329,7 @@
                                             "naranja":  110,
                                             "rojo":  160
                                         },
-                           "pct_umbral_amarillo":  17.9,
+                           "pct_umbral_amarillo":  18.5,
                            "unidad":  "m3/s",
                            "url":  "https://www.senamhi.gob.pe/?p=monitoreo-hidrologico"
                        },
@@ -352,10 +352,10 @@
                            "rio":  "Urubamba (Km 105 Machupicchu)",
                            "est":  "Intihuatana Km105",
                            "cod":  "472935F2",
-                           "hora":  "2026-11-23T04:00-05:00",
+                           "hora":  "2026-11-24T05:00-05:00",
                            "nivel_m":  null,
-                           "caudal_m3s":  44.757,
-                           "anomalia_pct":  -41.9,
+                           "caudal_m3s":  46.906,
+                           "anomalia_pct":  -35.1,
                            "condicion":  "Ligeramente por debajo de lo normal",
                            "alerta":  "verde",
                            "umbrales":  {
@@ -363,7 +363,7 @@
                                             "naranja":  517.33,
                                             "rojo":  802.75
                                         },
-                           "pct_umbral_amarillo":  11.3,
+                           "pct_umbral_amarillo":  11.8,
                            "unidad":  "m3/s",
                            "url":  "https://www.senamhi.gob.pe/?p=monitoreo-hidrologico"
                        },
@@ -371,10 +371,10 @@
                            "rio":  "Urubamba / Vilcanota",
                            "est":  "Pisac",
                            "cod":  "472A6280",
-                           "hora":  "2026-11-23T04:00-05:00",
+                           "hora":  "2026-11-24T05:00-05:00",
                            "nivel_m":  null,
-                           "caudal_m3s":  34.176,
-                           "anomalia_pct":  -10.5,
+                           "caudal_m3s":  36.537,
+                           "anomalia_pct":  -4.9,
                            "condicion":  "Normal",
                            "alerta":  "verde",
                            "umbrales":  {
@@ -382,7 +382,7 @@
                                             "naranja":  320,
                                             "rojo":  400
                                         },
-                           "pct_umbral_amarillo":  13.1,
+                           "pct_umbral_amarillo":  14.1,
                            "unidad":  "m3/s",
                            "url":  "https://www.senamhi.gob.pe/?p=monitoreo-hidrologico"
                        },
@@ -390,8 +390,8 @@
                            "rio":  "Urubamba (Chilca · Ollantaytambo)",
                            "est":  "Chilca",
                            "cod":  "472A9204",
-                           "hora":  "2026-11-23T04:00-05:00",
-                           "nivel_m":  2.81,
+                           "hora":  "2026-11-24T05:00-05:00",
+                           "nivel_m":  2.82,
                            "caudal_m3s":  null,
                            "anomalia_pct":  null,
                            "condicion":  "",
@@ -401,7 +401,7 @@
                                             "naranja":  5.5,
                                             "rojo":  6.5
                                         },
-                           "pct_umbral_amarillo":  56.2,
+                           "pct_umbral_amarillo":  56.4,
                            "unidad":  "m",
                            "url":  "https://www.senamhi.gob.pe/?p=monitoreo-hidrologico"
                        },
@@ -409,10 +409,10 @@
                            "rio":  "Apurímac",
                            "est":  "Puente Cunyac",
                            "cod":  "472C44A2",
-                           "hora":  "2026-11-23T05:00-05:00",
+                           "hora":  "2026-11-24T05:00-05:00",
                            "nivel_m":  null,
-                           "caudal_m3s":  69.21,
-                           "anomalia_pct":  -25.8,
+                           "caudal_m3s":  62.36,
+                           "anomalia_pct":  -31.6,
                            "condicion":  "Ligeramente por debajo de lo normal",
                            "alerta":  "verde",
                            "umbrales":  {
@@ -420,7 +420,7 @@
                                             "naranja":  1557.6,
                                             "rojo":  2064.7
                                         },
-                           "pct_umbral_amarillo":  7.9,
+                           "pct_umbral_amarillo":  7.1,
                            "unidad":  "m3/s",
                            "url":  "https://www.senamhi.gob.pe/?p=monitoreo-hidrologico"
                        }
